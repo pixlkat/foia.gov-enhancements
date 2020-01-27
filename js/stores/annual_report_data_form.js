@@ -11,6 +11,7 @@ class AnnualReportDataFormStore extends Store {
       formSections: List(),
       requestForms: new Map(),
       selectedAgencies: [{ index: 0 }],
+      selectedDataTypes: [{ index: 0 }],
     };
   }
 
@@ -56,6 +57,13 @@ class AnnualReportDataFormStore extends Store {
         this.__emitChange();
         break;
       }
+
+      case types.REPORT_DATA_TYPE_UPDATE:
+        break;
+
+      case types.REPORT_DATA_TYPE_FILTER_ADD_GROUP:
+        break;
+
       default:
         break;
     }
