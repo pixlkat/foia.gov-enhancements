@@ -1,0 +1,232 @@
+{
+    "report_type_options": [
+        {
+            "value": "group_v_a_foia_requests_received",
+            "label": "Requests"
+        },
+        {
+            "value": "group_overall_vb1_main",
+            "label": " - Disposition (Dis.)"
+        },
+        {
+            "value": "group_v_b_2_disposition_of_foia_",
+            "label": " - Dis. - \"Other\" Reasons,"
+        },
+        {
+            "value": "group_viii_a_requests_for_expedi",
+            "label": " - Expedited Processing"
+        },
+        {
+            "value": "group_v_b_3_disposition_of_foia_",
+            "label": "Exemptions"
+        },
+        {
+            "value": "group_iv_exemption_3_statutes",
+            "label": " - Exemption 3 Statutes"
+        },
+        {
+            "value": "group_vi_a_administrative_appeal",
+            "label": "Appeals"
+        },
+        {
+            "value": "group_vi_b_disposition_of_admini",
+            "label": " - Disposition (Dis.)"
+        },
+        {
+            "value": "group_vi_c_1_reasons_for_denial_",
+            "label": " - Dis. - Use of Exemptions"
+        },
+        {
+            "value": "group_vi_c_2_reasons_for_denial_",
+            "label": " - Dis. - Other Than Exs."
+        },
+        {
+            "value": "group_vi_c_3_reasons_for_denial_",
+            "label": " - Dis. - \"Other\" Reasons,"
+        },
+        {
+            "value": "group_vi_c_4_response_time_for_a",
+            "label": " - Response Time"
+        },
+        {
+            "value": "group_vi_c_5_ten_oldest",
+            "label": " - Ten Oldest Pending"
+        },
+        {
+            "value": "group_vii_a_foia_requests_wrap",
+            "label": "Processing Time"
+        },
+        {
+            "value": "group_vii_b_processed_req_wrap",
+            "label": " - Requests Granted"
+        },
+        {
+            "value": "group_vii_c_1_processed_simple_r",
+            "label": " - Simple Requests"
+        },
+        {
+            "value": "group_vii_c_2_processed_complex_",
+            "label": " - Complex Requests"
+        },
+        {
+            "value": "group_vii_c_3_processed_requests",
+            "label": " - Expedited Requests"
+        },
+        {
+            "value": "group_vii_d_pending_req_wrap",
+            "label": " - Pending Requests"
+        },
+        {
+            "value": "group_vii_e_pending_req_wrap",
+            "label": " - Ten Oldest Requests"
+        },
+        {
+            "value": "group_viii_b_requests_for_fee_wa",
+            "label": "Fee Waiver"
+        },
+        {
+            "value": "group_ix_foia_personnel_cost_wra",
+            "label": "Administration - FOIA Personnel"
+        },
+        {
+            "value": "group_x_fees_collected_for_proce",
+            "label": "Administration - FOIA Costs"
+        },
+        {
+            "value": "group_xi_a_number_of_times_subse",
+            "label": "Exclusions"
+        },
+        {
+            "value": "group_xi_b_number_of_subsection_",
+            "label": "Proactive Disclosures"
+        },
+        {
+            "value": "group_xii_a_backlogs_of_foia_req",
+            "label": "Backlog"
+        },
+        {
+            "value": "group_xii_b_consultations_on_foi",
+            "label": "Consultations"
+        },
+        {
+            "value": "group_xii_c_consultations_wrap",
+            "label": " - Ten Oldest"
+        },
+        {
+            "value": "group_xii_d_1_comparison_wrap",
+            "label": "Comparisons"
+        },
+        {
+            "value": "group_xii_d_2_comparison_of_numb",
+            "label": " - Requests Backlogged"
+        },
+        {
+            "value": "group_xii_e_1_comparison_of_wrap",
+            "label": " - Administrative Appeals"
+        },
+        {
+            "value": "group_xii_e_2_comparison_of_numb",
+            "label": " - Appeals Backlogged"
+        }
+    ],
+    "report_filter_map": {
+        "sections": {
+            "group_iv_exemption_3_statutes": {
+                "filter_options": []
+            },
+            "group_v_a_foia_requests_received":  {
+                "filter_options": []
+            },
+            "group_overall_vb1_main":  {
+                "filter_options": []
+            },
+            "group_v_b_2_disposition_of_foia_":  {
+                "filter_options": []
+            },
+            "group_v_b_3_disposition_of_foia_":  {
+                "filter_options": []
+            },
+            "group_vi_a_administrative_appeal":  {
+                "filter_options": []
+            },
+            "group_vi_b_disposition_of_admini":  {
+                "filter_options": []
+            },
+            "group_vi_c_1_reasons_for_denial_":  {
+                "filter_options": []
+            },
+            "group_vi_c_2_reasons_for_denial_":  {
+                "filter_options": []
+            },
+            "group_vi_c_3_reasons_for_denial_":  {
+                "filter_options": []
+            },
+            "group_vi_c_4_response_time_for_a":  {
+                "filter_options": []
+            },
+            "group_vi_c_5_ten_oldest":  {
+                "filter_options": []
+            },
+            "group_vii_a_foia_requests_wrap":  {
+                "filter_options": []
+            },
+            "group_vii_b_processed_req_wrap":  {
+                "filter_options": []
+            },
+            "group_vii_c_1_processed_simple_r":  {
+                "filter_options": []
+            },
+            "group_vii_c_2_processed_complex_":  {
+                "filter_options": []
+            },
+            "group_vii_c_3_processed_requests":  {
+                "filter_options": []
+            },
+            "group_vii_d_pending_req_wrap":  {
+                "filter_options": []
+            },
+            "group_vii_e_pending_req_wrap":  {
+                "filter_options": []
+            },
+            "group_viii_a_requests_for_expedi":  {
+                "filter_options": []
+            },
+            "group_viii_b_requests_for_fee_wa":  {
+                "filter_options": []
+            },
+            "group_ix_foia_personnel_cost_wra":  {
+                "filter_options": []
+            },
+            "group_x_fees_collected_for_proce":  {
+                "filter_options": []
+            },
+            "group_xi_a_number_of_times_subse":  {
+                "filter_options": []
+            },
+            "group_xi_b_number_of_subsection_":  {
+                "filter_options": []
+            },
+            "group_xii_a_backlogs_of_foia_req":  {
+                "filter_options": []
+            },
+            "group_xii_b_consultations_on_foi":  {
+                "filter_options": []
+            },
+            "group_xii_c_consultations_wrap":  {
+                "filter_options": []
+            },
+            "group_xii_d_1_comparison_wrap":  {
+                "filter_options": []
+            },
+            "group_xii_d_2_comparison_of_numb":  {
+                "filter_options": []
+            },
+            "group_xii_e_1_comparison_of_wrap":  {
+                "filter_options": []
+            },
+            "group_xii_e_2_comparison_of_numb":  {
+                "filter_options": []
+            }
+        }
+    }
+}
