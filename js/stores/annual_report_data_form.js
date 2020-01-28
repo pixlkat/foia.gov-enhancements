@@ -8,10 +8,9 @@ class AnnualReportDataFormStore extends Store {
   constructor(_dispatcher) {
     super(_dispatcher);
     this.state = {
-      formSections: List(),
-      requestForms: new Map(),
       selectedAgencies: [{ index: 0 }],
-      selectedDataTypes: [{ index: 0 }],
+      selectedDataTypes: [{ index: 0, id: '' }],
+      selectedDataTypeFilters: [{ index: 0 }],
     };
   }
 
@@ -58,11 +57,38 @@ class AnnualReportDataFormStore extends Store {
         break;
       }
 
-      case types.REPORT_DATA_TYPE_UPDATE:
+      case types.ANNUAL_REPORT_DATA_TYPE_UPDATE:
+        const { selectedDataType, previousDataType } = payload;
+        const previousIsValid = typeof previousDataType === 'object'
+          && Object.prototype.hasOwnProperty.call(previousDataType, 'index');
+        const selectedIsValid = typeof previousDataType === 'object'
+          && Object.prototype.hasOwnProperty.call(previousDataType, 'index');
+
+        if (!selectedIsValid || !previousIsValid) {
+          break;
+        }
+
+        const selectedDataTypes = [...this.state.selectedDataTypes];
+        selectedDataTypes.splice(previousDataType.index, 1, selectedDataType);
+        Object.assign(this.state, {
+          selectedDataTypes,
+        });
+
+        this.__emitChange();
         break;
 
-      case types.REPORT_DATA_TYPE_FILTER_ADD_GROUP:
+      case types.ANNUAL_REPORT_DATA_TYPE_FILTER_ADD_GROUP: {
+        const selectedDataTypes = [...this.state.selectedDataTypes];
+        selectedDataTypes.push({
+          index: (selectedDataTypes.length),
+          id: '',
+        });
+        Object.assign(this.state, {
+          selectedDataTypes,
+        });
+        this.__emitChange();
         break;
+      }
 
       default:
         break;
