@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { List } from 'immutable';
 
 const USWDSSelectWidget = props => (
   <div className="form-group field">
-    <label htmlFor={props.name}><strong>{props.title}</strong></label>
+    <label htmlFor={props.id}><strong>{props.title}</strong></label>
     <select
       name={props.name}
       id={props.id}
@@ -25,7 +26,7 @@ USWDSSelectWidget.propTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string,
   handleChange: PropTypes.func,
-  options: PropTypes.array.isRequired,
+  options: PropTypes.instanceOf(List).isRequired,
   placeholder: PropTypes.string,
 };
 
