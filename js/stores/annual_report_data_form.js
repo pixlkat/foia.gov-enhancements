@@ -57,7 +57,7 @@ class AnnualReportDataFormStore extends Store {
         break;
       }
 
-      case types.ANNUAL_REPORT_DATA_TYPE_UPDATE:
+      case types.ANNUAL_REPORT_DATA_TYPE_UPDATE: {
         const { selectedDataType, previousDataType } = payload;
         const previousIsValid = typeof previousDataType === 'object'
           && Object.prototype.hasOwnProperty.call(previousDataType, 'index');
@@ -76,15 +76,16 @@ class AnnualReportDataFormStore extends Store {
 
         this.__emitChange();
         break;
+      }
 
       case types.ANNUAL_REPORT_DATA_TYPE_FILTER_ADD_GROUP: {
-        const selectedDataTypes = [...this.state.selectedDataTypes];
-        selectedDataTypes.push({
-          index: (selectedDataTypes.length),
+        const currentSelectedDataTypes = [...this.state.selectedDataTypes];
+        currentSelectedDataTypes.push({
+          index: (currentSelectedDataTypes.length),
           id: '',
         });
         Object.assign(this.state, {
-          selectedDataTypes,
+          selectedDataTypes: currentSelectedDataTypes,
         });
         this.__emitChange();
         break;

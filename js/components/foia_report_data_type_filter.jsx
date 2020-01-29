@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { List, OrderedMap } from 'immutable';
 import { uniqueId } from 'lodash';
@@ -50,8 +50,7 @@ class FoiaReportDataTypeFilter extends Component {
         <div className="form-group field">
           <label htmlFor={`${inputId}_subject-${selectedDataType.id}-${selectedDataType.index}`}>
             Data Filters
-            <FoiaTooltip
-              text={"Select the type of FOIA data you would like to view. The data comes from agencies' Annual FOIA Reports. To learn more about the data, view the terms in the Glossary."}
+            <FoiaTooltip text={"Select the type of FOIA data you would like to view. The data comes from agencies' Annual FOIA Reports. To learn more about the data, view the terms in the Glossary."}
             />
           </label>
           <select name={`${inputId}_subject-${selectedDataType.id}-${selectedDataType.index}`} id={`${inputId}_subject-${selectedDataType.id}-${selectedDataType.index}`}>

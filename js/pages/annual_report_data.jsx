@@ -12,7 +12,12 @@ import { reportActions } from '../actions/report';
 
 class AnnualReportDataPage extends Component {
   static getStores() {
-    return [annualReportDataFormStore, annualReportFiscalYearStore, agencyComponentStore, annualReportDataTypesStore];
+    return [
+      annualReportDataFormStore,
+      annualReportFiscalYearStore,
+      agencyComponentStore,
+      annualReportDataTypesStore,
+    ];
   }
 
   static calculateState(prevState) {
