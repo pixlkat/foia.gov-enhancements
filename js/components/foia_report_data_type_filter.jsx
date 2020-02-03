@@ -72,12 +72,13 @@ class FoiaReportDataTypeFilter extends Component {
     return selection.filter.compareValue !== '';
   }
 
-
   buildModalContent() {
     const { selectedDataType } = this.props;
     const options = selectedDataType
       .filterOptions
-      .map(opt => ({ value: opt.id, label: opt.label }));
+      // @todo opt.id does not work for some reason as the value.
+      // editor says there are several definitions for 'id'.
+      .map(opt => ({ value: opt.label, label: opt.label }));
 
     return (
       <div className="form-group">

@@ -153,7 +153,8 @@ class AnnualReportDataFormStore extends Store {
 
       case types.ANNUAL_REPORT_DATA_TYPE_FILTER_UPDATE: {
         const { currentSelection, filter } = payload;
-        const { selectedDataTypes } = [...this.state.selectedDataTypes];
+        // Looks like this should not be declared as an object.
+        const selectedDataTypes = [...this.state.selectedDataTypes];
         if (!(typeof currentSelection === 'object' && Object.prototype.hasOwnProperty.call(currentSelection, 'index'))) {
           break;
         }
