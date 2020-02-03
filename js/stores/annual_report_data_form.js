@@ -3,6 +3,7 @@ import { Store } from 'flux/utils';
 import dispatcher from '../util/dispatcher';
 import { types } from '../actions/report';
 import agencyComponentStore from './agency_component';
+import annualReportDataTypesStore from './annual_report_data_types';
 
 class AnnualReportDataFormStore extends Store {
   constructor(_dispatcher) {
@@ -10,7 +11,6 @@ class AnnualReportDataFormStore extends Store {
     this.state = {
       selectedAgencies: [{ index: 0 }],
       selectedDataTypes: [{ index: 0, id: '' }],
-      selectedDataTypeFilters: [{ index: 0 }],
       selectedFiscalYears: [],
     };
   }
@@ -89,12 +89,33 @@ class AnnualReportDataFormStore extends Store {
         const { selectedDataType, previousDataType } = payload;
         const previousIsValid = typeof previousDataType === 'object'
           && Object.prototype.hasOwnProperty.call(previousDataType, 'index');
-        const selectedIsValid = typeof previousDataType === 'object'
-          && Object.prototype.hasOwnProperty.call(previousDataType, 'index');
+        const selectedIsValid = typeof selectedDataType === 'object'
+          && Object.prototype.hasOwnProperty.call(selectedDataType, 'index');
 
         if (!selectedIsValid || !previousIsValid) {
           break;
         }
+
+        if (selectedDataType.id === previousDataType.id) {
+          break;
+        }
+        selectedDataType.fields = annualReportDataTypesStore
+          .getFieldsForDataType(selectedDataType.id);
+
+        selectedDataType.filterOptions = selectedDataType
+          .fields
+          .filter(opt => opt.filter)
+          .map(opt => ({
+            value: opt.id,
+            label: opt.label,
+          }));
+
+        selectedDataType.filter = {
+          applied: false,
+          filterField: selectedDataType.filterOptions[0].value,
+          op: 'greater_than',
+          compareValue: '',
+        };
 
         const selectedDataTypes = [...this.state.selectedDataTypes];
         selectedDataTypes.splice(previousDataType.index, 1, selectedDataType);
@@ -126,6 +147,45 @@ class AnnualReportDataFormStore extends Store {
         }
 
         Object.assign(this.state, { selectedFiscalYears: data });
+        this.__emitChange();
+        break;
+      }
+
+      case types.ANNUAL_REPORT_DATA_TYPE_FILTER_UPDATE: {
+        const { currentSelection, filter } = payload;
+        const { selectedDataTypes } = [...this.state.selectedDataTypes];
+        if (!(typeof currentSelection === 'object' && Object.prototype.hasOwnProperty.call(currentSelection, 'index'))) {
+          break;
+        }
+        // Get a copy of the filter so we aren't updating the real one until
+        // the user submits the modal.
+        const tempFilter = currentSelection.tempFilter ?
+          currentSelection.tempFilter :
+          currentSelection.filter;
+        tempFilter[filter.name] = filter.value;
+
+        selectedDataTypes[currentSelection.index].tempFilter = tempFilter;
+        Object.assign(this.state, {
+          selectedDataTypes,
+        });
+
+        this.__emitChange();
+        break;
+      }
+
+      case types.ANNUAL_REPORT_DATA_TYPE_FILTER_SUBMIT: {
+        const { currentSelection, filter } = payload;
+        const { selectedDataTypes } = [...this.state.selectedDataTypes];
+        if (!(typeof currentSelection === 'object' && Object.prototype.hasOwnProperty.call(currentSelection, 'index'))) {
+          break;
+        }
+        // Get a copy of the filter so we aren't updating the real one until
+        // the user submits the modal.
+        const tempFilter = currentSelection.tempFilter ?
+          currentSelection.tempFilter :
+          currentSelection.filter;
+        tempFilter.applied = true;
+
         this.__emitChange();
         break;
       }
