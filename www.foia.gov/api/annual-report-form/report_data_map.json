@@ -1522,63 +1522,63 @@
     "pretty": "Pending Requests - All Pending Perfected Requests",
     "fields": [
       {
-        "id": "field_proc_req_vii_d_.field_sim_pend",
+        "id": "field_pending_requests_vii_d_.field_sim_pend",
         "label": "Simple - Number Pending",
         "filter": true,
         "overall_field": "field_overall_viid_sim_pend",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_sim_med",
+        "id": "field_pending_requests_vii_d_.field_sim_med",
         "label": "Simple - Median Number of Days",
         "filter": true,
         "overall_field": "field_overall_viid_sim_med",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_sim_avg",
+        "id": "field_pending_requests_vii_d_.field_sim_avg",
         "label": "Simple - Average Number of Days",
         "filter": true,
         "overall_field": "field_overall_viid_sim_avg",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_comp_pend",
+        "id": "field_pending_requests_vii_d_.field_comp_pend",
         "label": "Complex - Number Pending",
         "filter": true,
         "overall_field": "field_overall_viid_comp_pend",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_comp_med",
+        "id": "field_pending_requests_vii_d_.field_comp_med",
         "label": "Complex - Median Number of Days",
         "filter": true,
         "overall_field": "field_overall_viid_comp_med",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_comp_avg",
+        "id": "field_pending_requests_vii_d_.field_comp_avg",
         "label": "Complex - Average Number of Days",
         "filter": true,
         "overall_field": "field_overall_viid_comp_avg",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_exp_pend",
+        "id": "field_pending_requests_vii_d_.field_exp_pend",
         "label": "Expedited Processing - Number Pending",
         "filter": true,
         "overall_field": "field_overall_viid_exp_pend",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_exp_med",
+        "id": "field_pending_requests_vii_d_.field_exp_med",
         "label": "Expedited Processing - Median Number of Days",
         "filter": true,
         "overall_field": "field_overall_viid_exp_med",
         "display": true
       },
       {
-        "id": "field_proc_req_vii_d_.field_exp_avg",
+        "id": "field_pending_requests_vii_d_.field_exp_avg",
         "label": "Expedited Processing - Average Number of Days",
         "filter": true,
         "overall_field": "field_overall_viid_exp_avg",
@@ -1593,8 +1593,8 @@
       }
     ],
     "includes": [
-      "agency_component",
-      "field_proc_req_vii_d_.field_agency_component"
+      "field_pending_requests_vii_d_",
+      "field_pending_requests_vii_d_.field_agency_component"
     ]
   },
   {
